@@ -1,0 +1,3 @@
+[submodule "Butano"]
+	path = Butano
+	url = https://github.com/GValiente/Butano
