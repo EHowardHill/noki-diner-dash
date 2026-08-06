@@ -6,7 +6,7 @@ def bundle_source_code():
     # --- Configuration ---
     output_filename = "source.txt"
     # Add or remove file extensions here that you want to include in the output
-    target_extensions = [".cpp", ".hpp", ".c", ".h", ".py", ".sh"]
+    target_extensions = [".cpp", ".hpp", ".c", ".h", ".py", ".sh", ".tsv"]
 
     # Directories to ignore so they don't clutter your structure or output
     ignored_dirs = {
@@ -17,6 +17,7 @@ def bundle_source_code():
         ".vscode",
         "scripts",
         "Butano",
+        "build",
     }
     # ---------------------
 
