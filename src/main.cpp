@@ -5,22 +5,22 @@ made with Butano
 
 #include "bn_core.h"
 #include "gameplay.h"
-#include "scene.h"
 
-#include "scene01.h"
-
-using namespace bn;
+#include "bn_music_items.h"
 
 int main()
 {
-    core::init();
+    bn::core::init();
 
-    SceneManager scene_manager;
-    scene_manager.current_scene = &scene01;
-    scene_manager.render();
+    Room room;
+
+    room.bg_music = &bn::music_items::test;
+
+    Manager manager(room);
 
     while (true)
     {
-        core::update();
+        manager.update();
+        bn::core::update();
     }
 }

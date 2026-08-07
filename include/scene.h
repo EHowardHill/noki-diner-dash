@@ -5,6 +5,8 @@
 #include "bn_sprite_item.h"
 #include "bn_sprite_text_generator.h"
 #include "bn_vector.h"
+#include "bn_regular_bg_item.h"
+#include "bn_music_item.h"
 
 #include "common_variable_8x8_sprite_font.h"
 
@@ -27,17 +29,23 @@ struct Scene
 {
     const Line *lines;
     int lines_count;
-    bn::sprite_text_generator text_generator{common::variable_8x8_sprite_font};
+    const regular_bg_item *background;
+    const music_item *music;
 };
 
 struct SceneManager
 {
-    const Scene *current_scene;
+    const Scene* current_scene;
     int index;
     bool is_complete;
 
-    bn::sprite_text_generator text_generator{common::variable_8x8_sprite_font};
+    bn::sprite_text_generator text_generator{
+        common::variable_8x8_sprite_font
+    };
+
     bn::vector<bn::sprite_ptr, 32> text_sprites[3];
+
+    explicit SceneManager(const Scene* scene);
 
     void render();
     void update();

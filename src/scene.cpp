@@ -1,6 +1,13 @@
 #include "bn_keypad.h"
 #include "scene.h"
 
+SceneManager::SceneManager(const Scene* scene)
+    : current_scene(scene),
+      index(0),
+      is_complete(false)
+{
+}
+
 void SceneManager::render()
 {
     text_generator.generate(-120, 0, current_scene->lines[index].text[0], text_sprites[0]);
