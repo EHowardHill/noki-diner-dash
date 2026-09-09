@@ -54,7 +54,7 @@ struct Room
     int init_tile_x = 0;
     int init_tile_y = 0;
 
-    const music_item* bg_music = nullptr;
+    const music_item *bg_music = nullptr;
 };
 
 struct DustParticle
